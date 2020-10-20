@@ -1,7 +1,11 @@
 body {
 	margin: 0;
-	background-color: #000;
-	color: #fff;
+	background-size: 20px 20px;
+	background-color: black;
+	background-image:
+			linear-gradient(to right, grey 0.5px, transparent 0.5px),
+			linear-gradient(to bottom, grey 0.5px, transparent 0.5px);
+	color: #000000;
 	font-family: Monospace;
 	font-size: 13px;
 	line-height: 24px;
@@ -27,6 +31,7 @@ canvas {
 }
 
 #info {
+	color: white;
 	position: absolute;
 	top: 0px;
 	width: 100%;
@@ -66,14 +71,14 @@ a, button, input, select {
 	background: rgba(0,0,0,0.7);
 }
 
-	#overlay button {
-		background: #ffffff;
-		border: 0;
-		color: #000000;
-		padding: 16px 20px;
-		text-transform: uppercase;
-		cursor: pointer;
-	}
+#overlay button {
+	background: #ffffff;
+	border: 0;
+	color: #000000;
+	padding: 16px 20px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
 
 #notSupported {
 	width: 50%;
