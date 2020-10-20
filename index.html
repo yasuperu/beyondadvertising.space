@@ -132,10 +132,8 @@
 <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> css3d - periodic table.</div>
 <div id="container"></div>
 <div id="menu">
-	<button id="table">TABLE</button>
-	<button id="sphere">SPHERE</button>
-	<button id="helix">HELIX</button>
-	<button id="grid">GRID</button>
+	<button id="table">ORBIT</button>
+	<button id="sphere">OVERVIEW</button>
 </div>
 
 <script type="module">
@@ -185,7 +183,7 @@
 	let controls;
 
 	const objects = [];
-	const targets = { table: [], sphere: [], helix: [], grid: [] };
+	const targets = { table: [], sphere: [] };
 
 	init();
 	animate();
@@ -232,11 +230,13 @@
 
 			//
 
+			const vector = new THREE.Vector3();
+
 			const object = new THREE.Object3D();
 			object.position.x = ( table[ i + 3 ] * 140 ) - 1330;
 			object.position.y = - ( table[ i + 4 ] * 180 ) + 990;
 
-			targets.table.push( object );
+			targets.sphere.push( object );
 
 		}
 
@@ -257,42 +257,7 @@
 
 			object.lookAt( vector );
 
-			targets.sphere.push( object );
-
-		}
-
-		// helix
-
-		for ( let i = 0, l = objects.length; i < l; i ++ ) {
-
-			const theta = i * 0.175 + Math.PI;
-			const y = - ( i * 8 ) + 450;
-
-			const object = new THREE.Object3D();
-
-			object.position.setFromCylindricalCoords( 900, theta, y );
-
-			vector.x = object.position.x * 2;
-			vector.y = object.position.y;
-			vector.z = object.position.z * 2;
-
-			object.lookAt( vector );
-
-			targets.helix.push( object );
-
-		}
-
-		// grid
-
-		for ( let i = 0; i < objects.length; i ++ ) {
-
-			const object = new THREE.Object3D();
-
-			object.position.x = ( ( i % 5 ) * 400 ) - 800;
-			object.position.y = ( - ( Math.floor( i / 5 ) % 5 ) * 400 ) + 800;
-			object.position.z = ( Math.floor( i / 25 ) ) * 1000 - 2000;
-
-			targets.grid.push( object );
+			targets.table.push( object );
 
 		}
 
@@ -329,20 +294,6 @@
 		buttonSphere.addEventListener( 'click', function () {
 
 			transform( targets.sphere, 2000 );
-
-		}, false );
-
-		const buttonHelix = document.getElementById( 'helix' );
-		buttonHelix.addEventListener( 'click', function () {
-
-			transform( targets.helix, 2000 );
-
-		}, false );
-
-		const buttonGrid = document.getElementById( 'grid' );
-		buttonGrid.addEventListener( 'click', function () {
-
-			transform( targets.grid, 2000 );
 
 		}, false );
 
