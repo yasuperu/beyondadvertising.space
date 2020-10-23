@@ -155,17 +155,23 @@
 			color: #000000;
 			background-color: red;
 		}
+
 	</style>
 </head>
 <body>
+<div id="overlay">
+	<button id="startButton">ENTER THE ORBIT</button>
+</div>
 
-<div id="info"> Student heading towards your orbit</div>
+<div id="info">
+	Student heading towards your orbit
+</div>
 <div id="container"></div>
 <div id="menu">
 	<button id="sphere">OVERVIEW</button>
 	<button id="table">ORBIT</button>
+	<button onclick="window.location.href='students/4dKI4j141QI'">hello</button>
 </div>
-
 <script type="module">
 
 	import * as THREE from '../build/three.module.js';
@@ -514,10 +520,18 @@
 	const objects = [];
 	const targets = { table: [], sphere: [] };
 
-	init();
-	animate();
+	var startButton = document.getElementById( 'startButton' );
+	startButton.addEventListener( 'click', function () {
 
-	function init(url) {
+		init();
+		animate();
+
+	}, false );
+
+	function init() {
+
+		var overlay = document.getElementById( 'overlay' );
+		overlay.remove();
 
 		camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
 		camera.position.z = 3000;
@@ -563,7 +577,7 @@
 			const zoom = document.createElement('button');
 			zoom.className = 'zoom';
 			zoom.addEventListener('click', function (){
-				window.location=table[i + 8];
+				window.location= [i + 8];
 			});
 			zoom.textContent = 'zoom';
 			element.appendChild( zoom );
@@ -577,8 +591,6 @@
 			objects.push( objectCSS );
 
 			//
-
-			const vector = new THREE.Vector3();
 
 			const object = new THREE.Object3D();
 			object.position.x = ( table[ i + 3 ] * 140 ) - 1330;
@@ -599,7 +611,7 @@
 
 			const object = new THREE.Object3D();
 
-			object.position.setFromSphericalCoords( 800, phi, theta );
+			object.position.setFromSphericalCoords( 900, phi, theta );
 
 			vector.copy( object.position ).multiplyScalar( 2 );
 
@@ -734,6 +746,11 @@
 		TWEEN.update();
 
 		controls.update();
+
+		var time = Date.now() * 0.0004;
+
+		scene.rotation.x = time;
+		scene.rotation.y = time * 0.7;
 
 	}
 
