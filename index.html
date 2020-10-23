@@ -31,7 +31,7 @@
 			height: 360px;
 			box-shadow: 0px 0px 12px rgba(255,255,255,255);
 			border: 1px solid rgba(255,255,255,255);
-			font-family: Helvetica, sans-serif;
+			font-family: Monospace, sans-serif;
 			text-align: center;
 			line-height: normal;
 			cursor: default;
@@ -39,38 +39,40 @@
 		}
 
 		.element:hover {
-			width: 100%;
-			height: 100%;
+			width: 150%;
+			height: 65%;
 			transform: scale(0);
 			transition: .3s ease;
 			transition-delay:0.5s;
 		}
 
-		.element:active{
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			background-color: white;
-			overflow: hidden;
-			width: 100%;
-			height: 100%;
-			transform: scale(0);
-			transition: .3s ease;
-		}
+		/*.element:active{*/
+		/*	position: absolute;*/
+		/*	bottom: 0;*/
+		/*	left: 0;*/
+		/*	right: 0;*/
+		/*	background-color: white;*/
+		/*	overflow: hidden;*/
+		/*	width: 100%;*/
+		/*	height: 100%;*/
+		/*	transform: scale(0);*/
+		/*	transition: .3s ease;*/
+		/*}*/
 
 		.element .number {
 			position: absolute;
-			bottom: 0;
+			bottom: 40;
 			left: 0;
 			right: 0;
 			width: 480px;
-			height: 360px;
+			height: 312px;
 			opacity: 0.8;
 		}
 
 		.element:hover .number{
-			width: 100%;
+			position: absolute;
+			left: 600px;
+			width: 40%;
 			height: 100%;
 			transition: .3s ease;
 			transition-delay:0.5s;
@@ -82,7 +84,7 @@
 			top: 40px;
 			left: 0px;
 			right: 0px;
-			font-size: 60px;
+			font-size: 20px;
 			font-weight: bold;
 			color: rgba(255,255,255,255);
 			text-shadow: 0 0 10px rgba(255,255,255,255);
@@ -93,37 +95,47 @@
 			bottom: 15px;
 			left: 0px;
 			right: 0px;
-			font-size: 20px;
+			font-size: 0px;
 			color: rgba(255,255,255,255);
 		}
 
 		.element:hover .details {
 			position: absolute;
-			bottom: 15px;
-			left: 0px;
-			right: 0px;
-			font-size: 60px;
+			top: 35px;
+			left: 35px;
+			right: 1500px;
+			font-size: 30px;
 			color: rgba(255,255,255,255);
+			text-align: left;
 			transition: .3s ease;
 			transition-delay:0.5s;
 		}
 
 		.element .website {
 			position: absolute;
-			bottom: 15px;
+			bottom: 0px;
 			left: 0px;
 			right: 0px;
 			font-size: 20px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 82px;
+			padding-right: 82px;
 			color: rgba(255,255,255,255);
+			background-color: black;
 		}
 
 		.element .zoom {
 			position: absolute;
-			bottom: 15px;
-			left: 400px;
+			bottom: 0px;
 			right: 0px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 82px;
+			padding-right: 82px;
 			font-size: 20px;
 			color: rgba(255,255,255,255);
+			background-color: black;
 		}
 
 		button {
@@ -166,7 +178,7 @@
 		"Huib Scholten",
 		"4dKI4j141QI",
 		"I like to create new forms and aesthetic ideas to produce profound experiences. Combining the social world and the commercial world of brands. Not just because it is fun, but to make people care.⚡",
-		1,
+		2,
 		1,
 		"website",
 		"http://thebestunknown.com/",
@@ -176,7 +188,7 @@
 		"Lumi Pulkkinen",
 		"UhGBkZlAxEo",
 		"I am Lumi Pulkkinen, a subversive advertiser. The goal of my multidisciplinary praxis is to encourage critique and compassion. Through community building and education, I want to work on dismantling unjust power relations in society.",
-		1,
+		2,
 		3,
 		"website",
 		"https://lumipulkkinen.com/",
@@ -186,8 +198,8 @@
 		"Huib Scholten",
 		"4dKI4j141QI",
 		"I like to create new forms and aesthetic ideas to produce profound experiences. Combining the social world and the commercial world of brands. Not just because it is fun, but to make people care.⚡",
-		1,
-		1,
+		2,
+		6,
 		"website",
 		"http://thebestunknown.com/",
 		"zoom",
@@ -196,8 +208,8 @@
 		"Lumi Pulkkinen",
 		"UhGBkZlAxEo",
 		"I am Lumi Pulkkinen, a subversive advertiser. The goal of my multidisciplinary praxis is to encourage critique and compassion. Through community building and education, I want to work on dismantling unjust power relations in society.",
-		1,
-		3,
+		2,
+		9,
 		"website",
 		"https://lumipulkkinen.com/",
 		"zoom",
@@ -519,6 +531,9 @@
 			const element = document.createElement( 'div' );
 			element.className = 'element';
 			element.style.backgroundColor = 'rgba(0,0,0,' + ( Math.random() * 0.5 + 0 ) + ')';
+			// element.addEventListener('click', function (){
+			// 	window.location = 'students/' + table[i + 1];
+			// });
 
 			const number = document.createElement( 'iframe');
 			number.className = 'number';
@@ -527,10 +542,10 @@
 			number.textContent = ( i / 9 ) + 1;
 			element.appendChild( number );
 
-			const symbol = document.createElement( 'div' );
-			symbol.className = 'symbol';
-			symbol.textContent = table[ i ];
-			element.appendChild( symbol );
+			// const symbol = document.createElement( 'div' );
+			// symbol.className = 'symbol';
+			// symbol.textContent = table[ i ];
+			// element.appendChild( symbol );
 
 			const details = document.createElement( 'div' );
 			details.className = 'details';
@@ -550,7 +565,7 @@
 			zoom.addEventListener('click', function (){
 				window.location=table[i + 8];
 			});
-			zoom.textContent = table[ i + 7 ];
+			zoom.textContent = 'zoom';
 			element.appendChild( zoom );
 
 			const objectCSS = new CSS3DObject( element );
