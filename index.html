@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-FZQ3C68WYJ"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-FZQ3C68WYJ');
-	</script>
 	<title>BEYOND ADVERTISING</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
@@ -168,9 +159,9 @@
 	</style>
 </head>
 <body>
-<div id="overlay">
-	<button id="startButton">ENTER THE ORBIT</button>
-</div>
+<!--<div id="overlay">-->
+<!--	<button id="startButton">ENTER THE ORBIT</button>-->
+<!--</div>-->
 
 <div id="info">
 	Student heading towards your orbit
@@ -190,23 +181,23 @@
 	import { CSS3DRenderer, CSS3DObject } from './jsm/renderers/CSS3DRenderer.js';
 
 	const table = [
-		"Huib Scholten",
-		"4dKI4j141QI",
-		"I like to create new forms and aesthetic ideas to produce profound experiences. Combining the social world and the commercial world of brands. Not just because it is fun, but to make people care.⚡",
+		"Laura Zampou",
+		"Oaej0-49a9I",
+			"Ayisha Laura by Laura for Ayisha in collaboration with Ayisha Laura. Creative direction.   Art direction.   Branding.    Concept-and Content Creating.",
 		2,
 		1,
 		"website",
-		"http://thebestunknown.com/",
+		"https://ayisha-laura.wixsite.com/mijnsite",
 		"zoom",
 		"http://thebestunknown.com/",
 
-		"Lumi Pulkkinen",
-		"UhGBkZlAxEo",
-		"I am Lumi Pulkkinen, a subversive advertiser. The goal of my multidisciplinary praxis is to encourage critique and compassion. Through community building and education, I want to work on dismantling unjust power relations in society.",
+		"Susanne Broer",
+		"JCW38tL_wHE",
+		"Hi! My name is Susanne, I imagine a futuristic world where the meaning of understanding each other is accessible for everyone. In my projects I am driven to create those connections.",
 		2,
 		3,
 		"website",
-		"https://lumipulkkinen.com/",
+		"https://susannebroer.nl",
 		"zoom",
 		"http://thebestunknown.com/",
 
@@ -220,13 +211,13 @@
 		"zoom",
 		"http://thebestunknown.com/",
 
-		"Lumi Pulkkinen",
-		"UhGBkZlAxEo",
-		"I am Lumi Pulkkinen, a subversive advertiser. The goal of my multidisciplinary praxis is to encourage critique and compassion. Through community building and education, I want to work on dismantling unjust power relations in society.",
+		"Lonneke den Haan",
+		"LTtWMA3LwJw",
+		"hi, my name is Lonneke den Haan and I am a writer and visionary, protesters, creator, poet, thinker, photographer, seamstress in training. It is a work in progress",
 		2,
 		9,
 		"website",
-		"https://lumipulkkinen.com/",
+		"studiohaantjesgedrag.nl",
 		"zoom",
 		"http://thebestunknown.com/",
 
@@ -529,18 +520,21 @@
 	const objects = [];
 	const targets = { table: [], sphere: [] };
 
-	var startButton = document.getElementById( 'startButton' );
-	startButton.addEventListener( 'click', function () {
+	// var startButton = document.getElementById( 'startButton' );
+	// startButton.addEventListener( 'click', function () {
+	//
+	// 	init();
+	// 	animate();
+	//
+	// }, false );
 
-		init();
-		animate();
-
-	}, false );
+	init();
+	animate();
 
 	function init() {
 
-		var overlay = document.getElementById( 'overlay' );
-		overlay.remove();
+		// var overlay = document.getElementById( 'overlay' );
+		// overlay.remove();
 
 		camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
 		camera.position.z = 3000;
@@ -578,9 +572,9 @@
 			const website = document.createElement('button');
 			website.className = 'website';
 			website.addEventListener('click', function (){
-				window.location=table[i + 6];
+				window.location='students/' + table[i + 1];
 			});
-			website.textContent = table[ i + 5 ];
+			website.textContent = 'about';
 			element.appendChild( website );
 
 			const zoom = document.createElement('button');
@@ -588,7 +582,7 @@
 			zoom.addEventListener('click', function (){
 				window.location= [i + 8];
 			});
-			zoom.textContent = 'zoom';
+			zoom.textContent = 'contact';
 			element.appendChild( zoom );
 
 			const objectCSS = new CSS3DObject( element );
