@@ -169,7 +169,7 @@
 <div id="menu">
 	<button id="sphere">OVERVIEW</button>
 	<button id="table">ORBIT</button>
-	<button onclick="window.location.href='students/4dKI4j141QI'">about</button>
+	<button onclick="window.location.href='about'">about</button>
 </div>
 <script type="module">
 
@@ -475,7 +475,7 @@
 
 			const object = new THREE.Object3D();
 
-			object.position.setFromSphericalCoords( 900, phi, theta );
+			object.position.setFromSphericalCoords( 800, phi, theta );
 
 			vector.copy( object.position ).multiplyScalar( 2 );
 
@@ -529,7 +529,7 @@
 
 		//
 
-		var geometry = new THREE.SphereGeometry( 790, 32, 32 );
+		var geometry = new THREE.SphereGeometry( 690, 32, 32 );
 		var material = new THREE.ShaderMaterial({
 			uniforms: {
 				color1: {
