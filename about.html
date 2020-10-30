@@ -38,13 +38,13 @@
             background-color: black;
         }
 
-        .element:hover {
-            width: 150%;
-            height: 65%;
-            transform: scale(0);
-            transition: .3s ease;
-            transition-delay:0.5s;
-        }
+        /*.element:hover {*/
+        /*	width: 70%;*/
+        /*	height: 70%;*/
+        /*	transform: scale(0);*/
+        /*	transition: .3s ease;*/
+        /*	transition-delay:0.5s;*/
+        /*}*/
 
         /*.element:active{*/
         /*	position: absolute;*/
@@ -69,15 +69,14 @@
             opacity: 0.8;
         }
 
-        .element:hover .number{
-            position: absolute;
-            left: 600px;
-            width: 40%;
-            height: 100%;
-            transition: .3s ease;
-            transition-delay:0.5s;
-            opacity: 1;
-        }
+        /*.element:hover .number{*/
+        /*	position: absolute;*/
+        /*	width: 100%;*/
+        /*	height: 100%;*/
+        /*	transition: .3s ease;*/
+        /*	transition-delay:0.5s;*/
+        /*	opacity: 1;*/
+        /*}*/
 
         .element .symbol {
             position: absolute;
@@ -99,17 +98,17 @@
             color: rgba(255,255,255,255);
         }
 
-        .element:hover .details {
-            position: absolute;
-            top: 35px;
-            left: 35px;
-            right: 1500px;
-            font-size: 30px;
-            color: rgba(255,255,255,255);
-            text-align: left;
-            transition: .3s ease;
-            transition-delay:0.5s;
-        }
+        /*.element:hover .details {*/
+        /*	position: absolute;*/
+        /*	top: 35px;*/
+        /*	left: 35px;*/
+        /*	right: 1500px;*/
+        /*	font-size: 30px;*/
+        /*	color: rgba(255,255,255,255);*/
+        /*	text-align: left;*/
+        /*	transition: .3s ease;*/
+        /*	transition-delay:0.5s;*/
+        /*}*/
 
         .element .website {
             position: absolute;
@@ -121,6 +120,7 @@
             padding-bottom: 10px;
             padding-left: 82px;
             padding-right: 82px;
+            width: 100%;
             color: rgba(255,255,255,255);
             background-color: black;
         }
@@ -145,6 +145,7 @@
             border: 0px;
             padding: 5px 10px;
             cursor: pointer;
+            margin-bottom: 10px;
         }
 
         button:hover {
@@ -154,6 +155,44 @@
         button:active {
             color: #000000;
             background-color: red;
+        }
+
+        #header {
+            border-style: solid;
+            border-color: white;
+            border-width: 1px;
+            color: white;
+            width: auto;
+            top: 5px;
+            width: 100%;
+            padding: 2px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+            text-align: left;
+            z-index: 1; /* TODO Solve this in HTML */
+        }
+
+        #blackbar {
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+            color: black;
+            width: auto;
+            top: 5px;
+            width: 100%;
+            padding: 2px;
+            box-sizing: border-box;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+            z-index: 1; /* TODO Solve this in HTML */
         }
 
         #contact{
@@ -224,9 +263,40 @@
             pointer-events: none;
             z-index: 1; /* TODO Solve this in HTML */
         }
+
+        #credits {
+            position: absolute;
+            color: white;
+            top: 83%;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+            font-size: 10px;
+            z-index: 1; /* TODO Solve this in HTML */
+        }
+
     </style>
 </head>
 <body>
+<div id="header">WDKA { Interstellar > Beyond Advertising }</div>
+<div id="blackbar"></div>
+<div id="container" style="
+background-image:
+			linear-gradient(to right, grey 0.5px, transparent 0.5px),
+			linear-gradient(to bottom, grey 0.5px, transparent 0.5px);
+background-size: 26px 26px;
+background-color: black;
+border-style: solid;
+border-color: white;
+border-width: 1px;
+height: 615px;
+">
 <div id="about">Discover the collection of WDKA's third year Advertising students. On this page you can find their work and plan a zoom meeting with them- Underneath a list of all names
     of the students:
     <div id="student1">
@@ -257,9 +327,12 @@
         <a href="students/SIqZt4VgqD8.html">Luke Vermeulen</a>
         <br>
         <a href="students/ctieddQ_YuY.html">Femke Sannen</a>
+        <br>
+        <a href="students/NkHhiWu3X-Q.html">Berksun Doğaner</a>
+        <br>
+        <a href="students/E_Id4Ix7nb4.html">Casey Voogt</a>
+        <br>
         <div id="student2">
-            <a href="students/E_Id4Ix7nb4.html">Casey Voogt</a>
-            <br>
             <a href="students/4dKI4j141QI.html">Huib Scholten</a>
             <br>
             <a href="students/2HZrxHiTBqU.html">Joel van Rooij</a>
@@ -270,12 +343,32 @@
             <br>
             <a href="students/vZ_1HIRpckA.html">Renske Heringa</a>
             <br>
+            <a href="students/XwBIs52i3aM.html">Bodine Hekkert</a>
+            <br>
+            <a href="students/55JjOhpGBoU.html">Erik Dernee</a>
+            <br>
+            <a href="students/RphDLTys7uM.html">Hilde Bekers</a>
+            <br>
+            <a href="students/izU1_WVn-q8.html">Rosa Zwiers</a>
+            <br>
+            <a href="students/9hqkaROIgzo.html">Mart Verschuren</a>
+            <br>
+            <a href="students/J87SJ1mHrQk.html">Theo Rekelhof</a>
+            <br>
+            <a href="students/AtDo2djoPvs.html">Bibi Manancourt</a>
+            <br>
+            <a href="students/oBGGrD3RNLg.html">Jurriaan Hendriks</a>
+            <br>
+            <a href="students/Ran3BafwIgM.html">Shéyna van den Heever</a>
+            <br>
+            <a href="students/d2JWaf_zjDM.html">Sophie Schellens</a>
+            <br>
         </div>
     </div>
 </div>
+    <div id="credits">Concept and design by: <a href="https://www.behance.net/zaidmurtaza">Zaid Murtaza</a> and <a href="students/d2JWaf_zjDM.html">Algulcan</a> | Webdevelopment by: <a href="http://thebestunknown.com/">Jasper Kamphuis</a></div>
 <div id="menu">
     <button onclick="window.location.href='../index'">overview</button>
-    <button onclick="window.location.href='../about'">about</button>
 </div>
 
 </body>
