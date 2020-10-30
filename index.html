@@ -120,6 +120,7 @@
 			padding-bottom: 10px;
 			padding-left: 82px;
 			padding-right: 82px;
+			width: 100%;
 			color: rgba(255,255,255,255);
 			background-color: black;
 		}
@@ -155,6 +156,44 @@
 			background-color: red;
 		}
 
+		#header {
+			border-style: solid;
+			border-color: white;
+			border-width: 1px;
+			color: white;
+			width: auto;
+			top: 5px;
+			width: 100%;
+			padding: 2px;
+			padding-left: 10px;
+			box-sizing: border-box;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			pointer-events: none;
+			text-align: left;
+			z-index: 1; /* TODO Solve this in HTML */
+		}
+
+		#blackbar {
+			border-style: solid;
+			border-color: black;
+			border-width: 1px;
+			color: black;
+			width: auto;
+			top: 5px;
+			width: 100%;
+			padding: 2px;
+			box-sizing: border-box;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			pointer-events: none;
+			z-index: 1; /* TODO Solve this in HTML */
+		}
+
 	</style>
 </head>
 <body>
@@ -162,13 +201,38 @@
 <!--	<button id="startButton">ENTER THE ORBIT</button>-->
 <!--</div>-->
 
-<div id="info">
-	Student heading towards your orbit
+<div>
+	<div id="header">
+		WDKA { Interstellar > Beyond Advertising }
+	</div>
+	<div id="blackbar"></div>
+	<div id="info">
+		Students heading 12 November towards your orbit
+	</div>
+<!--	<div id="location">-->
+<!--		HOME-->
+<!--	</div>-->
+	<div id="container" style="
+background-image:
+			linear-gradient(to right, grey 0.5px, transparent 0.5px),
+			linear-gradient(to bottom, grey 0.5px, transparent 0.5px);
+background-size: 26px 26px;
+background-color: black;
+border-style: solid;
+border-color: white;
+border-width: 1px;
+height: 615px;
+">
+
 </div>
-<div id="container"></div>
+
+
+</div>
 <div id="menu">
-	<button id="sphere">OVERVIEW</button>
-	<button id="table">ORBIT</button>
+	<a id="table"></a>
+	<a id="sphere"></a>
+<!--	<button id="sphere">OVERVIEW</button>-->
+<!--	<button id="table">ORBIT</button>-->
 	<button onclick="window.location.href='about'">about</button>
 </div>
 <script type="module">
@@ -183,193 +247,187 @@
 		"Laura Zampou",
 		"Oaej0-49a9I",
 		-3.75,
-		1.5,
+		2,
 		"http://beyondadvertising.space/",
 
 		"Susanne Broer",
 		"JCW38tL_wHE",
 		-3.75,
-		4,
+		4.5,
 		"http://beyondadvertising.space/",
 
 		"Lonneke den Haan",
 		"LTtWMA3LwJw",
 		-3.75,
-		6.5,
+		7,
 		"http://beyondadvertising.space/",
 
 		"Lumi Pulkkinen",
 		"UhGBkZlAxEo",
-		-3.75,
-		9,
+		-1.75,
+		9.5,
 		"http://beyondadvertising.space/",
 
 		"Doris Laging",
 		"khudnn9kqnY",
 		0,
-		1.5,
+		2,
 		"http://beyondadvertising.space/",
 
 		"Tatum Hekkert",
 		"G05BNK3MOE0",
 		0,
-		4,
+		4.5,
 		"http://beyondadvertising.space/",
 
 		"Femke Sannen",
 		"ctieddQ_YuY",
 		0,
-		6.5,
+		7,
 		"http://beyondadvertising.space/",
 
 		"Annemarijn Mulder",
 		"aTLM4F641w0",
-		0,
-		9,
+		2,
+		9.5,
 		"http://beyondadvertising.space/",
 
 		"Jeske Maas",
 		"7-j6blr8fag",
 		3.75,
-		1.5,
+		2,
 		"http://beyondadvertising.space/",
 
 		"Pim Hermans",
 		"qraOBwGgbYY",
 		3.75,
-		4,
+		4.5,
 		"http://beyondadvertising.space/",
 
 		"Julia Heetman",
 		"LE_uGCfn-Ik",
 		3.75,
-		6.5,
+		7,
 		"http://beyondadvertising.space/",
 
 		"Berksun Doğaner",
 		"xxx",
-		3.75,
-		9,
+		5.75,
+		9.5,
 		"http://beyondadvertising.space/",
 
 		"Willemijn Besteman",
 		"fyI0Phx6LKU",
 		7.5,
-		1.5,
+		2,
 		"http://beyondadvertising.space/",
 
 		"Jannes van Arkel",
 		"-BWunouxycI",
 		7.5,
-		4,
+		4.5,
 		"http://beyondadvertising.space/",
 
 		"Luke Vermeulen",
 		"SIqZt4VgqD8",
 		7.5,
-		6.5,
+		7,
 		"http://beyondadvertising.space/",
 
 		"Casey Voogt",
 		"E_Id4Ix7nb4",
-		7.5,
-		9,
+		9.5,
+		9.5,
 		"http://beyondadvertising.space/",
 
 		"Huib Scholten",
 		"4dKI4j141QI",
 		11.25,
-		1.5,
+		2,
 		"http://beyondadvertising.space/",
 
 		"Joel van Rooij",
 		"2HZrxHiTBqU",
 		11.25,
-		4,
+		4.5,
 		"http://beyondadvertising.space/",
 
 		"Stella Matthes",
 		"qHFL86CxQ1M",
 		11.25,
-		6.5,
+		7,
 		"http://beyondadvertising.space/",
 
 		"Mariëlle Kuin",
 		"awQtnPGK6A4",
-		11.25,
-		9,
+		13.25,
+		9.5,
 		"http://beyondadvertising.space/",
 
 		"Renske Heringa",
 		"vZ_1HIRpckA",
 		15,
-		1.5,
+		2,
 		"http://beyondadvertising.space/",
 
 		"Bodine Hekkert",
 		"XwBIs52i3aM",
 		15,
-		4,
-		"http://beyondadvertising.space/",
-
-		"Emma van Hartevelt",
-		"xxx",
-		15,
-		6.5,
+		4.5,
 		"http://beyondadvertising.space/",
 
 		"Erik Dernee",
 		"55JjOhpGBoU",
 		15,
-		9,
+		7,
 		"http://beyondadvertising.space/",
 
 		"Hilde Bekers",
 		"RphDLTys7uM",
 		18.75,
-		1.5,
+		2,
 		"http://beyondadvertising.space/",
 
 		"Rosa Zwiers",
 		"izU1_WVn-q8",
 		18.75,
-		4,
+		4.5,
 		"http://beyondadvertising.space/",
 
 		"Mart Verschuren",
 		"9hqkaROIgzo",
 		18.75,
-		6.5,
+		7,
 		"http://beyondadvertising.space/",
 
 		"Theo Rekelhof",
 		"J87SJ1mHrQk",
-		18.75,
-		9,
+		17,
+		9.5,
 		"http://beyondadvertising.space/",
 
 		"Bibi Manancourt",
 		"AtDo2djoPvs",
 		22.6,
-		1.5,
+		2,
 		"http://beyondadvertising.space/",
 
 		"Jurriaan Hendriks",
 		"oBGGrD3RNLg",
 		22.6,
-		4,
+		4.5,
 		"http://beyondadvertising.space/",
 
 		"Shéyna van den Heever",
 		"Ran3BafwIgM",
 		22.6,
-		6.5,
+		7,
 		"http://beyondadvertising.space/",
 
 		"Sophie Schellens",
 		"d2JWaf_zjDM",
-		22.6,
-		9,
+		20.75,
+		9.5,
 		"http://beyondadvertising.space/",
 
 
@@ -438,13 +496,13 @@
 			website.textContent = 'view';
 			element.appendChild( website );
 
-			const zoom = document.createElement('button');
-			zoom.className = 'zoom';
-			zoom.addEventListener('click', function (){
-				window.location= table[i + 4];
-			});
-			zoom.textContent = 'zoomlink';
-			element.appendChild( zoom );
+			// const zoom = document.createElement('button');
+			// zoom.className = 'zoom';
+			// zoom.addEventListener('click', function (){
+			// 	window.location= table[i + 4];
+			// });
+			// zoom.textContent = 'zoomlink';
+			// element.appendChild( zoom );
 
 			const objectCSS = new CSS3DObject( element );
 			objectCSS.position.x = Math.random() * 4000 - 2000;
@@ -460,7 +518,7 @@
 			object.position.x = ( table[ i + 2 ] * 140 ) - 1330;
 			object.position.y = - ( table[ i + 3 ] * 180 ) + 990;
 
-			targets.sphere.push( object );
+			targets.table.push( object );
 
 		}
 
@@ -481,7 +539,7 @@
 
 			object.lookAt( vector );
 
-			targets.table.push( object );
+			targets.sphere.push( object );
 
 		}
 
@@ -610,7 +668,7 @@
 
 		TWEEN.update();
 
-		controls.update();
+		// controls.update();
 
 		// var time = Date.now() * 0.0004;
 		//

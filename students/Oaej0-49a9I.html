@@ -181,9 +181,60 @@
             left: 32%;
             top: 20%;
         }
+        #header {
+            border-style: solid;
+            border-color: white;
+            border-width: 1px;
+            color: white;
+            width: auto;
+            top: 5px;
+            width: 100%;
+            padding: 2px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+            text-align: left;
+            z-index: 1; /* TODO Solve this in HTML */
+        }
+
+        #blackbar {
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+            color: black;
+            width: auto;
+            top: 5px;
+            width: 100%;
+            padding: 2px;
+            box-sizing: border-box;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+            z-index: 1; /* TODO Solve this in HTML */
+        }
+
     </style>
 </head>
 <body>
+<div id="header">WDKA { Interstellar > Beyond Advertising }</div>
+<div id="blackbar"></div>
+<div id="container" style="
+background-image:
+			linear-gradient(to right, grey 0.5px, transparent 0.5px),
+			linear-gradient(to bottom, grey 0.5px, transparent 0.5px);
+background-size: 26px 26px;
+background-color: black;
+border-style: solid;
+border-color: white;
+border-width: 1px;
+height: 615px;
+">
 <iframe id="youtube" src="https://www.youtube.com/embed/Oaej0-49a9I?controls=0"></iframe>
 <div id="info">Incomming message
     <div id="about">
@@ -194,15 +245,16 @@
         contact
         <br>
         <br>
-        <button onclick="window.location.href='https://ayisha-laura.wixsite.com/mijnsite'">website</button>
+        <button style="width: 200%; height: 50px; background-color: black" onclick="window.location.href='https://ayisha-laura.wixsite.com/mijnsite'">website</button>
         <br>
         <br>
-        <button onclick="window.location.href='https://ayisha-laura.wixsite.com/mijnsite'">zoomlink</button>
+<!--        <button onclick="window.location.href='https://ayisha-laura.wixsite.com/mijnsite'">zoomlink</button>-->
     </div>
 </div>
 <div id="menu">
     <button onclick="window.location.href='../index'">overview</button>
     <button onclick="window.location.href='../about'">about</button>
+</div>
 </div>
 
 </body>

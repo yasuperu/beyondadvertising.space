@@ -1,10 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>BEYOND ADVERTISING</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="main.css">
+    <style>
+        a {
+            color: white;
+        }
+
+        #bar{
+            color: rgba(255,255,255,255);
+            background: black;
+            outline: 1px solid white;
+            border: 0px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        #menu {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .element {
+            width: 480px;
+            height: 360px;
+            box-shadow: 0px 0px 12px rgba(255,255,255,255);
+            border: 1px solid rgba(255,255,255,255);
+            font-family: Monospace, sans-serif;
+            text-align: center;
+            line-height: normal;
+            cursor: default;
+            background-color: black;
+        }
+
+        .element:hover {
+            width: 150%;
+            height: 65%;
+            transform: scale(0);
+            transition: .3s ease;
+            transition-delay:0.5s;
+        }
+
+        /*.element:active{*/
+        /*	position: absolute;*/
+        /*	bottom: 0;*/
+        /*	left: 0;*/
+        /*	right: 0;*/
+        /*	background-color: white;*/
+        /*	overflow: hidden;*/
+        /*	width: 100%;*/
+        /*	height: 100%;*/
+        /*	transform: scale(0);*/
+        /*	transition: .3s ease;*/
+        /*}*/
+
+        .element .number {
+            position: absolute;
+            bottom: 40;
+            left: 0;
+            right: 0;
+            width: 480px;
+            height: 312px;
+            opacity: 0.8;
+        }
+
+        .element:hover .number{
+            position: absolute;
+            left: 600px;
+            width: 40%;
+            height: 100%;
+            transition: .3s ease;
+            transition-delay:0.5s;
+            opacity: 1;
+        }
+
+        .element .symbol {
+            position: absolute;
+            top: 40px;
+            left: 0px;
+            right: 0px;
+            font-size: 20px;
+            font-weight: bold;
+            color: rgba(255,255,255,255);
+            text-shadow: 0 0 10px rgba(255,255,255,255);
+        }
+
+        .element .details {
+            position: absolute;
+            bottom: 15px;
+            left: 0px;
+            right: 0px;
+            font-size: 0px;
+            color: rgba(255,255,255,255);
+        }
+
+        .element:hover .details {
+            position: absolute;
+            top: 35px;
+            left: 35px;
+            right: 1500px;
+            font-size: 30px;
+            color: rgba(255,255,255,255);
+            text-align: left;
+            transition: .3s ease;
+            transition-delay:0.5s;
+        }
+
+        .element .website {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            font-size: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 82px;
+            padding-right: 82px;
+            color: rgba(255,255,255,255);
+            background-color: black;
+        }
+
+        .element .zoom {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 82px;
+            padding-right: 82px;
+            font-size: 20px;
+            color: rgba(255,255,255,255);
+            background-color: black;
+        }
+
+        button {
+            color: rgba(255,255,255,255);
+            background: transparent;
+            outline: 1px solid white;
+            border: 0px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: red;
+        }
+
+        button:active {
+            color: #000000;
+            background-color: red;
+        }
+
+        #contact{
+            position: absolute;
+            padding-top: 10%;
+            padding-right: 5%;
+            padding-left: 70%;
+            text-align: left;
+            font-size: 20px;
+        }
+
+        #youtube {
+            position: absolute;
+            width: 35%;
+            height: 360px;
+            left: 32%;
+            top: 20%;
+        }
+
+        #about {
+            color: white;
+            position: absolute;
+            top: 10%;
+            width: 100%;
+            padding: 10px;
+            padding-left: 10%;
+            padding-right: 10%;
+            box-sizing: border-box;
+            text-align: center;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+            z-index: 1; /* TODO Solve this in HTML */
+        }
+
+        #student1 {
+            color: white;
+            position: absolute;
+            top: 90%;
+            width: 120%;
+            padding: 10px;
+            padding-left: 15%;
+            box-sizing: border-box;
+            text-align: left;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+            z-index: 1; /* TODO Solve this in HTML */
+        }
+
+        #student2 {
+            color: white;
+            position: absolute;
+            top: 0%;
+            width: 120%;
+            padding: 10px;
+            padding-left: 30%;
+            box-sizing: border-box;
+            text-align: left;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+            z-index: 1; /* TODO Solve this in HTML */
+        }
+    </style>
 </head>
 <body>
+<div id="about">Discover the collection of WDKA's third year Advertising students. On this page you can find their work and plan a zoom meeting with them- Underneath a list of all names
+    of the students:
+    <div id="student1">
+        <a href="students/Oaej0-49a9I.html">Laura Zampou</a>
+        <br>
+        <a href="students/JCW38tL_wHE.html">Susanne Broer</a>
+        <br>
+        <a href="students/LTtWMA3LwJw.html">Lonneke den Haan</a>
+        <br>
+        <a href="students/UhGBkZlAxEo.html">Lumi Pulkkinen</a>
+        <br>
+        <a href="students/khudnn9kqnY.html">Doris Laging</a>
+        <br>
+        <a href="students/G05BNK3MOE0.html">Tatum Hekkert</a>
+        <br>
+        <a href="students/aTLM4F641w0.html">Annemarijn Mulder</a>
+        <br>
+        <a href="students/7-j6blr8fag.html">Jeske Maas</a>
+        <br>
+        <a href="students/qraOBwGgbYY.html">Pim Hermans</a>
+        <br>
+        <a href="students/LE_uGCfn-Ik.html">Julia Heetman</a>
+        <br>
+        <a href="students/fyI0Phx6LKU.html">Willemijn Besteman</a>
+        <br>
+        <a href="students/-BWunouxycI.html">Jannes van Arkel</a>
+        <br>
+        <a href="students/SIqZt4VgqD8.html">Luke Vermeulen</a>
+        <br>
+        <a href="students/ctieddQ_YuY.html">Femke Sannen</a>
+        <div id="student2">
+            <a href="students/E_Id4Ix7nb4.html">Casey Voogt</a>
+            <br>
+            <a href="students/4dKI4j141QI.html">Huib Scholten</a>
+            <br>
+            <a href="students/2HZrxHiTBqU.html">Joel van Rooij</a>
+            <br>
+            <a href="students/qHFL86CxQ1M.html">Stella Matthes</a>
+            <br>
+            <a href="students/awQtnPGK6A4.html">Mariëlle Kuin</a>
+            <br>
+            <a href="students/vZ_1HIRpckA.html">Renske Heringa</a>
+            <br>
+        </div>
+    </div>
+</div>
+<div id="menu">
+    <button onclick="window.location.href='../index'">overview</button>
+    <button onclick="window.location.href='../about'">about</button>
+</div>
 
 </body>
 </html>
