@@ -198,10 +198,9 @@
 	</style>
 </head>
 <body>
-<div id="overlay">
-	<button id="startButton">ENTER THE ORBIT</button>
-	<a>view one of the video's and have a personal zoom with the creatives</a>
-</div>
+<!--<div id="overlay">-->
+<!--	<button id="startButton">ENTER THE ORBIT</button>-->
+<!--</div>-->
 
 <div>
 	<div id="header">
@@ -233,10 +232,9 @@ height: 645px;
 <div id="menu">
 	<a id="table"></a>
 	<a id="sphere"></a>
-		<button onclick="window.location.href='../overview.html'">OVERVIEW</button>
+		<button onclick="window.location.href='../index2.html'">OVERVIEW</button>
 <!--		<button id="table">ORBIT</button>-->
 	<button onclick="window.location.href='../about.html'">about</button>
-	<button onclick="window.location.href='../about.html'">zoom kick-off</button>
 </div>
 <script type="module">
 
@@ -442,21 +440,21 @@ height: 645px;
 	const objects = [];
 	const targets = { table: [], sphere: [] };
 
-	var startButton = document.getElementById( 'startButton' );
-	startButton.addEventListener( 'click', function () {
+	// var startButton = document.getElementById( 'startButton' );
+	// startButton.addEventListener( 'click', function () {
+	//
+	// 	init();
+	// 	animate();
+	//
+	// }, false );
 
-		init();
-		animate();
-
-	}, false );
-
-	// init();
-	// animate();
+	init();
+	animate();
 
 	function init() {
 
-		var overlay = document.getElementById( 'overlay' );
-		overlay.remove();
+		// var overlay = document.getElementById( 'overlay' );
+		// overlay.remove();
 
 		camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
 		camera.position.z = 3300;

@@ -198,10 +198,9 @@
 	</style>
 </head>
 <body>
-<div id="overlay">
-	<button id="startButton">ENTER THE ORBIT</button>
-	<a>view one of the video's and have a personal zoom with the creatives</a>
-</div>
+<!--<div id="overlay">-->
+<!--	<button id="startButton">ENTER THE ORBIT</button>-->
+<!--</div>-->
 
 <div>
 	<div id="header">
@@ -231,12 +230,11 @@ height: 645px;
 
 </div>
 <div id="menu">
-	<a id="table"></a>
+		<a id="table"></a>
 	<a id="sphere"></a>
-		<button onclick="window.location.href='../overview.html'">OVERVIEW</button>
-<!--		<button id="table">ORBIT</button>-->
+	<button onclick="window.location.href='../orbit.html'">ORBIT</button>
+<!--	<button id="table">ORBIT</button>-->
 	<button onclick="window.location.href='../about.html'">about</button>
-	<button onclick="window.location.href='../about.html'">zoom kick-off</button>
 </div>
 <script type="module">
 
@@ -442,21 +440,21 @@ height: 645px;
 	const objects = [];
 	const targets = { table: [], sphere: [] };
 
-	var startButton = document.getElementById( 'startButton' );
-	startButton.addEventListener( 'click', function () {
+	// var startButton = document.getElementById( 'startButton' );
+	// startButton.addEventListener( 'click', function () {
+	//
+	// 	init();
+	// 	animate();
+	//
+	// }, false );
 
-		init();
-		animate();
-
-	}, false );
-
-	// init();
-	// animate();
+	init();
+	animate();
 
 	function init() {
 
-		var overlay = document.getElementById( 'overlay' );
-		overlay.remove();
+		// var overlay = document.getElementById( 'overlay' );
+		// overlay.remove();
 
 		camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
 		camera.position.z = 3300;
@@ -521,7 +519,7 @@ height: 645px;
 			object.position.x = ( table[ i + 2 ] * 140 ) - 1330;
 			object.position.y = - ( table[ i + 3 ] * 180 ) + 990;
 
-			targets.sphere.push( object );
+			targets.table.push( object );
 
 		}
 
@@ -542,7 +540,7 @@ height: 645px;
 
 			object.lookAt( vector );
 
-			targets.table.push( object );
+			targets.sphere.push( object );
 
 		}
 
@@ -563,10 +561,10 @@ height: 645px;
 
 		//
 
-		controls = new TrackballControls( camera, renderer.domElement );
-		controls.minDistance = 500;
-		controls.maxDistance = 6000;
-		controls.addEventListener( 'change', render );
+		// controls = new TrackballControls( camera, renderer.domElement );
+		// controls.minDistance = 500;
+		// controls.maxDistance = 6000;
+		// controls.addEventListener( 'change', render );
 
 
 		const buttonTable = document.getElementById( 'table' );
@@ -589,7 +587,7 @@ height: 645px;
 
 		window.addEventListener( 'resize', onWindowResize, false );
 
-		document.body.addEventListener('keydown', keyPressed, false);
+		// document.body.addEventListener('keydown', keyPressed, false);
 
 		//
 
