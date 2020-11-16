@@ -222,386 +222,383 @@ background-color: black;
 border-style: solid;
 border-color: white;
 border-width: 1px;
-height: 645px;
+height: 100%;
 ">
-
 	</div>
-
-
-</div>
-<div id="menu">
+	<div id="menu">
 		<a id="table"></a>
-	<a id="sphere"></a>
-	<button onclick="window.location.href='../orbit.html'">ORBIT</button>
-<!--	<button id="table">ORBIT</button>-->
-	<button onclick="window.location.href='../about.html'">about</button>
-</div>
-<script type="module">
+		<a id="sphere"></a>
+		<button onclick="window.location.href='../orbit.html'">ORBIT</button>
+		<!--	<button id="table">ORBIT</button>-->
+		<button onclick="window.location.href='../about.html'">about</button>
+		<button onclick="window.location.href='https://us02web.zoom.us/j/3408434683?pwd=L2owanRKNEFvZkZrS3A5WkEyWnc2QT09'">zoom kick-off</button>
+	</div>
+	<script type="module">
 
-	import * as THREE from '../build/three.module.js';
+		import * as THREE from '../build/three.module.js';
 
-	import { TWEEN } from './jsm/libs/tween.module.min.js';
-	import { TrackballControls } from './jsm/controls/TrackballControls.js';
-	import { CSS3DRenderer, CSS3DObject } from './jsm/renderers/CSS3DRenderer.js';
+		import { TWEEN } from './jsm/libs/tween.module.min.js';
+		import { TrackballControls } from './jsm/controls/TrackballControls.js';
+		import { CSS3DRenderer, CSS3DObject } from './jsm/renderers/CSS3DRenderer.js';
 
-	const table = [
-		"Laura Zampou",
-		"Oaej0-49a9I",
-		-3.75,
-		2,
-		"6376326548",
+		const table = [
+			"Laura Zampou",
+			"Oaej0-49a9I",
+			-3.75,
+			2,
+			"6376326548",
 
-		"Susanne Broer",
-		"JCW38tL_wHE",
-		-3.75,
-		4.5,
-		"5740435862",
+			"Susanne Broer",
+			"JCW38tL_wHE",
+			-3.75,
+			4.5,
+			"5740435862",
 
-		"Lonneke den Haan",
-		"LTtWMA3LwJw",
-		-3.75,
-		7,
-		"2741620538?pwd=UFFiWjlJeG1VYVYwYzZEOWFERGthUT09",
+			"Lonneke den Haan",
+			"LTtWMA3LwJw",
+			-3.75,
+			7,
+			"2741620538?pwd=UFFiWjlJeG1VYVYwYzZEOWFERGthUT09",
 
-		"Lumi Pulkkinen",
-		"UhGBkZlAxEo",
-		-1.75,
-		9.5,
-		"3573038045",
+			"Lumi Pulkkinen",
+			"UhGBkZlAxEo",
+			-1.75,
+			9.5,
+			"3573038045",
 
-		"Doris Laging",
-		"khudnn9kqnY",
-		0,
-		2,
-		"4328669389",
+			"Doris Laging",
+			"khudnn9kqnY",
+			0,
+			2,
+			"4328669389",
 
-		"Tatum Hekkert",
-		"G05BNK3MOE0",
-		0,
-		4.5,
-		"4936834736?pwd=YnY3ckZLTlAyUzFDVjE3NFUyT1o1dz09",
+			"Tatum Hekkert",
+			"G05BNK3MOE0",
+			0,
+			4.5,
+			"4936834736?pwd=YnY3ckZLTlAyUzFDVjE3NFUyT1o1dz09",
 
-		"Femke Sannen",
-		"ctieddQ_YuY",
-		0,
-		7,
-		"9258964701",
+			"Femke Sannen",
+			"ctieddQ_YuY",
+			0,
+			7,
+			"9258964701",
 
-		"Annemarijn Mulder",
-		"aTLM4F641w0",
-		2,
-		9.5,
-		"9310730120",
+			"Annemarijn Mulder",
+			"aTLM4F641w0",
+			2,
+			9.5,
+			"9310730120",
 
-		"Jeske Maas",
-		"7-j6blr8fag",
-		3.75,
-		2,
-		"7406231167",
+			"Jeske Maas",
+			"7-j6blr8fag",
+			3.75,
+			2,
+			"7406231167",
 
-		"Pim Hermans",
-		"qraOBwGgbYY",
-		3.75,
-		4.5,
-		"9253361221",
+			"Pim Hermans",
+			"qraOBwGgbYY",
+			3.75,
+			4.5,
+			"9253361221",
 
-		"Julia Heetman",
-		"LE_uGCfn-Ik",
-		3.75,
-		7,
-		"6454607321",
+			"Julia Heetman",
+			"LE_uGCfn-Ik",
+			3.75,
+			7,
+			"6454607321",
 
-		"Berksun Doğaner",
-		"NkHhiWu3X-Q",
-		5.75,
-		9.5,
-		"3680073254?pwd=TERwWkd5cVFCMEkzTjc2SUs1WE00UT09",
+			"Berksun Doğaner",
+			"NkHhiWu3X-Q",
+			5.75,
+			9.5,
+			"3680073254?pwd=TERwWkd5cVFCMEkzTjc2SUs1WE00UT09",
 
-		"Willemijn Besteman",
-		"fyI0Phx6LKU",
-		7.5,
-		2,
-		"9773379973",
+			"Willemijn Besteman",
+			"fyI0Phx6LKU",
+			7.5,
+			2,
+			"9773379973",
 
-		"Jannes van Arkel",
-		"-BWunouxycI",
-		7.5,
-		4.5,
-		"3370522286",
+			"Jannes van Arkel",
+			"-BWunouxycI",
+			7.5,
+			4.5,
+			"3370522286",
 
-		"Luke Vermeulen",
-		"SIqZt4VgqD8",
-		7.5,
-		7,
-		"6419094475",
+			"Luke Vermeulen",
+			"SIqZt4VgqD8",
+			7.5,
+			7,
+			"6419094475",
 
-		"Casey Voogt",
-		"E_Id4Ix7nb4",
-		9.5,
-		9.5,
-		"7362957794?pwd=L3Q3YW13ZFZFQm1CQWFDY0piTGwvZz09",
+			"Casey Voogt",
+			"E_Id4Ix7nb4",
+			9.5,
+			9.5,
+			"7362957794?pwd=L3Q3YW13ZFZFQm1CQWFDY0piTGwvZz09",
 
-		"Huib Scholten",
-		"4dKI4j141QI",
-		11.25,
-		2,
-		"4074930005",
+			"Huib Scholten",
+			"4dKI4j141QI",
+			11.25,
+			2,
+			"4074930005",
 
-		"Joel van Rooij",
-		"2HZrxHiTBqU",
-		11.25,
-		4.5,
-		"2111817132",
+			"Joel van Rooij",
+			"2HZrxHiTBqU",
+			11.25,
+			4.5,
+			"2111817132",
 
-		"Stella Matthes",
-		"qHFL86CxQ1M",
-		11.25,
-		7,
-		"5942250098",
+			"Stella Matthes",
+			"qHFL86CxQ1M",
+			11.25,
+			7,
+			"5942250098",
 
-		"Mariëlle Kuin",
-		"awQtnPGK6A4",
-		13.25,
-		9.5,
-		"3320694436",
+			"Mariëlle Kuin",
+			"awQtnPGK6A4",
+			13.25,
+			9.5,
+			"3320694436",
 
-		"Renske Heringa",
-		"vZ_1HIRpckA",
-		15,
-		2,
-		"9913108582?pwd=NTVTR0orbDhzek9iV09RMUpoY013QT09",
+			"Renske Heringa",
+			"vZ_1HIRpckA",
+			15,
+			2,
+			"9913108582?pwd=NTVTR0orbDhzek9iV09RMUpoY013QT09",
 
-		"Bodine Hekkert",
-		"XwBIs52i3aM",
-		15,
-		4.5,
-		"6232951001",
+			"Bodine Hekkert",
+			"XwBIs52i3aM",
+			15,
+			4.5,
+			"6232951001",
 
-		"Erik Dernee",
-		"55JjOhpGBoU",
-		15,
-		7,
-		"8924376286?pwd=Z1BWL1FaMGRxT1U2VUlFc0ZHWURtZz09",
+			"Erik Dernee",
+			"55JjOhpGBoU",
+			15,
+			7,
+			"8924376286?pwd=Z1BWL1FaMGRxT1U2VUlFc0ZHWURtZz09",
 
-		"Hilde Bekers",
-		"RphDLTys7uM",
-		18.75,
-		2,
-		"8268780784?pwd=QW5TNy9YNzI3Mjd6clFMUFhJRDkxdz09",
+			"Hilde Bekers",
+			"RphDLTys7uM",
+			18.75,
+			2,
+			"8268780784?pwd=QW5TNy9YNzI3Mjd6clFMUFhJRDkxdz09",
 
-		"Rosa Zwiers",
-		"izU1_WVn-q8",
-		18.75,
-		4.5,
-		"3154634766",
+			"Rosa Zwiers",
+			"izU1_WVn-q8",
+			18.75,
+			4.5,
+			"3154634766",
 
-		"Mart Verschuren",
-		"9hqkaROIgzo",
-		18.75,
-		7,
-		"8475328613",
+			"Mart Verschuren",
+			"9hqkaROIgzo",
+			18.75,
+			7,
+			"8475328613",
 
-		"Theo Rekelhof",
-		"J87SJ1mHrQk",
-		17,
-		9.5,
-		"6677044715?pwd=dHNHUmRDdlBPNmx3VldleXZuTmVVUT09",
+			"Theo Rekelhof",
+			"J87SJ1mHrQk",
+			17,
+			9.5,
+			"9712978492?pwd=MXVDRU1ENlEvNzdZZlJsSWJEUUdndz09",
 
-		"Bibi Manancourt",
-		"AtDo2djoPvs",
-		22.6,
-		2,
-		"4998506063?pwd=cTZBSFN4YXdueWVNSjNneUEvY0ZUQT09",
+			"Bibi Manancourt",
+			"AtDo2djoPvs",
+			22.6,
+			2,
+			"4998506063?pwd=cTZBSFN4YXdueWVNSjNneUEvY0ZUQT09",
 
-		"Jurriaan Hendriks",
-		"oBGGrD3RNLg",
-		22.6,
-		4.5,
-		"6593549150",
+			"Jurriaan Hendriks",
+			"oBGGrD3RNLg",
+			22.6,
+			4.5,
+			"6593549150",
 
-		"Shéyna van den Heever",
-		"Ran3BafwIgM",
-		22.6,
-		7,
-		"5409917432?pwd=Z3RHTW5vcTlhWkk5VEJPNk5GaHBQZz09",
+			"Shéyna van den Heever",
+			"Ran3BafwIgM",
+			22.6,
+			7,
+			"5409917432?pwd=Z3RHTW5vcTlhWkk5VEJPNk5GaHBQZz09",
 
-		"Sophie Schellens",
-		"d2JWaf_zjDM",
-		20.75,
-		9.5,
-		"7931646784",
+			"Sophie Schellens",
+			"d2JWaf_zjDM",
+			20.75,
+			9.5,
+			"7931646784",
 
 
-	];
+		];
 
-	let camera, scene, renderer, rendererWebGL;
-	let controls;
+		let camera, scene, renderer, rendererWebGL;
+		let controls;
 
-	const objects = [];
-	const targets = { table: [], sphere: [] };
+		const objects = [];
+		const targets = { table: [], sphere: [] };
 
-	// var startButton = document.getElementById( 'startButton' );
-	// startButton.addEventListener( 'click', function () {
-	//
-	// 	init();
-	// 	animate();
-	//
-	// }, false );
+		// var startButton = document.getElementById( 'startButton' );
+		// startButton.addEventListener( 'click', function () {
+		//
+		// 	init();
+		// 	animate();
+		//
+		// }, false );
 
-	init();
-	animate();
+		init();
+		animate();
 
-	function init() {
+		function init() {
 
-		// var overlay = document.getElementById( 'overlay' );
-		// overlay.remove();
+			// var overlay = document.getElementById( 'overlay' );
+			// overlay.remove();
 
-		camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
-		camera.position.z = 3300;
+			camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
+			camera.position.z = 3300;
 
-		scene = new THREE.Scene();
+			scene = new THREE.Scene();
 
-		// table
+			// table
 
-		for ( let i = 0; i < table.length; i += 5 ) {
+			for ( let i = 0; i < table.length; i += 5 ) {
 
-			const element = document.createElement( 'div' );
-			element.className = 'element';
-			element.style.backgroundColor = 'rgba(0,0,0,' + ( Math.random() * 0.5 + 0 ) + ')';
-			// element.addEventListener('click', function (){
-			// 	window.location = 'students/' + table[i + 1];
-			// });
+				const element = document.createElement( 'div' );
+				element.className = 'element';
+				element.style.backgroundColor = 'rgba(0,0,0,' + ( Math.random() * 0.5 + 0 ) + ')';
+				// element.addEventListener('click', function (){
+				// 	window.location = 'students/' + table[i + 1];
+				// });
 
-			const number = document.createElement( 'iframe');
-			number.className = 'number';
-			// number.setAttribute('allowtransparency', 'true');
-			number.src = 'https://www.youtube.com/embed/' + table[ i + 1 ] ;
-			// number.textContent = ( i / 4 ) + 1;
-			element.appendChild( number );
+				const number = document.createElement( 'iframe');
+				number.className = 'number';
+				// number.setAttribute('allowtransparency', 'true');
+				number.src = 'https://www.youtube.com/embed/' + table[ i + 1 ] ;
+				// number.textContent = ( i / 4 ) + 1;
+				element.appendChild( number );
 
-			// const symbol = document.createElement( 'div' );
-			// symbol.className = 'symbol';
-			// symbol.textContent = table[ i ];
-			// element.appendChild( symbol );
+				// const symbol = document.createElement( 'div' );
+				// symbol.className = 'symbol';
+				// symbol.textContent = table[ i ];
+				// element.appendChild( symbol );
 
-			const details = document.createElement( 'div' );
-			details.className = 'details';
-			// details.innerHTML = table[ i + 2 ];
-			element.appendChild( details );
+				const details = document.createElement( 'div' );
+				details.className = 'details';
+				// details.innerHTML = table[ i + 2 ];
+				element.appendChild( details );
 
-			const website = document.createElement('button');
-			website.className = 'website';
-			website.addEventListener('click', function (){
-				window.location= '/students/' + table[i + 1] + '.html';
-			});
-			website.textContent = 'view';
-			element.appendChild( website );
+				const website = document.createElement('button');
+				website.className = 'website';
+				website.addEventListener('click', function (){
+					window.location= '/students/' + table[i + 1] + '.html';
+				});
+				website.textContent = 'view';
+				element.appendChild( website );
 
-			const zoom = document.createElement('button');
-			zoom.className = 'zoom';
-			zoom.addEventListener('click', function (){
-				window.location= 'https://hogeschoolrotterdam.zoom.us/j/' + table[i + 4];
-			});
-			zoom.textContent = 'zoomlink';
-			element.appendChild( zoom );
+				const zoom = document.createElement('button');
+				zoom.className = 'zoom';
+				zoom.addEventListener('click', function (){
+					window.location= 'https://hogeschoolrotterdam.zoom.us/j/' + table[i + 4];
+				});
+				zoom.textContent = 'zoomlink';
+				element.appendChild( zoom );
 
-			const objectCSS = new CSS3DObject( element );
-			objectCSS.position.x = Math.random() * 4000 - 2000;
-			objectCSS.position.y = Math.random() * 4000 - 2000;
-			objectCSS.position.z = Math.random() * 4000 - 2000;
-			scene.add( objectCSS );
+				const objectCSS = new CSS3DObject( element );
+				objectCSS.position.x = Math.random() * 4000 - 2000;
+				objectCSS.position.y = Math.random() * 4000 - 2000;
+				objectCSS.position.z = Math.random() * 4000 - 2000;
+				scene.add( objectCSS );
 
-			objects.push( objectCSS );
+				objects.push( objectCSS );
+
+				//
+
+				const object = new THREE.Object3D();
+				object.position.x = ( table[ i + 2 ] * 140 ) - 1330;
+				object.position.y = - ( table[ i + 3 ] * 180 ) + 990;
+
+				targets.table.push( object );
+
+			}
+
+			// sphere
+
+			const vector = new THREE.Vector3();
+
+			for ( let i = 0, l = objects.length; i < l; i ++ ) {
+
+				const phi = Math.acos( - 1 + ( 2 * i ) / l );
+				const theta = Math.sqrt( l * Math.PI ) * phi;
+
+				const object = new THREE.Object3D();
+
+				object.position.setFromSphericalCoords( 800, phi, theta );
+
+				vector.copy( object.position ).multiplyScalar( 2 );
+
+				object.lookAt( vector );
+
+				targets.sphere.push( object );
+
+			}
+
+			// WebGL
+
+			rendererWebGL = new THREE.WebGLRenderer( { alpha: true } );
+			rendererWebGL.setPixelRatio( window.devicePixelRatio );
+			rendererWebGL.setSize( window.innerWidth, window.innerHeight );
+			container.appendChild( rendererWebGL.domElement );
+
+			// CSS
+
+			renderer = new CSS3DRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.getElementById( 'container' ).appendChild( renderer.domElement );
+			renderer.domElement.style.position = 'absolute';
+			renderer.domElement.style.top = 0;
 
 			//
 
-			const object = new THREE.Object3D();
-			object.position.x = ( table[ i + 2 ] * 140 ) - 1330;
-			object.position.y = - ( table[ i + 3 ] * 180 ) + 990;
-
-			targets.table.push( object );
-
-		}
-
-		// sphere
-
-		const vector = new THREE.Vector3();
-
-		for ( let i = 0, l = objects.length; i < l; i ++ ) {
-
-			const phi = Math.acos( - 1 + ( 2 * i ) / l );
-			const theta = Math.sqrt( l * Math.PI ) * phi;
-
-			const object = new THREE.Object3D();
-
-			object.position.setFromSphericalCoords( 800, phi, theta );
-
-			vector.copy( object.position ).multiplyScalar( 2 );
-
-			object.lookAt( vector );
-
-			targets.sphere.push( object );
-
-		}
-
-		// WebGL
-
-		rendererWebGL = new THREE.WebGLRenderer( { alpha: true } );
-		rendererWebGL.setPixelRatio( window.devicePixelRatio );
-		rendererWebGL.setSize( window.innerWidth, window.innerHeight );
-		container.appendChild( rendererWebGL.domElement );
-
-		// CSS
-
-		renderer = new CSS3DRenderer();
-		renderer.setSize( window.innerWidth, window.innerHeight );
-		document.getElementById( 'container' ).appendChild( renderer.domElement );
-		renderer.domElement.style.position = 'absolute';
-		renderer.domElement.style.top = 0;
-
-		//
-
-		// controls = new TrackballControls( camera, renderer.domElement );
-		// controls.minDistance = 500;
-		// controls.maxDistance = 6000;
-		// controls.addEventListener( 'change', render );
+			// controls = new TrackballControls( camera, renderer.domElement );
+			// controls.minDistance = 500;
+			// controls.maxDistance = 6000;
+			// controls.addEventListener( 'change', render );
 
 
-		const buttonTable = document.getElementById( 'table' );
-		buttonTable.addEventListener( 'click', function () {
+			const buttonTable = document.getElementById( 'table' );
+			buttonTable.addEventListener( 'click', function () {
+
+				transform( targets.table, 2000 );
+				key.reset()
+			}, false );
+
+			const buttonSphere = document.getElementById( 'sphere' );
+			buttonSphere.addEventListener( 'click', function () {
+
+				transform( targets.sphere, 2000 );
+				objects.reset()
+			}, false );
 
 			transform( targets.table, 2000 );
-			key.reset()
-		}, false );
 
-		const buttonSphere = document.getElementById( 'sphere' );
-		buttonSphere.addEventListener( 'click', function () {
+			//
 
-			transform( targets.sphere, 2000 );
-			objects.reset()
-		}, false );
+			window.addEventListener( 'resize', onWindowResize, false );
 
-		transform( targets.table, 2000 );
+			// document.body.addEventListener('keydown', keyPressed, false);
 
-		//
+			//
 
-		window.addEventListener( 'resize', onWindowResize, false );
-
-		// document.body.addEventListener('keydown', keyPressed, false);
-
-		//
-
-		var geometry = new THREE.SphereGeometry( 690, 32, 32 );
-		var material = new THREE.ShaderMaterial({
-			uniforms: {
-				color1: {
-					value: new THREE.Color("red")
+			var geometry = new THREE.SphereGeometry( 690, 32, 32 );
+			var material = new THREE.ShaderMaterial({
+				uniforms: {
+					color1: {
+						value: new THREE.Color("red")
+					},
+					color2: {
+						value: new THREE.Color("purple")
+					}
 				},
-				color2: {
-					value: new THREE.Color("purple")
-				}
-			},
-			vertexShader: `
+				vertexShader: `
     varying vec2 vUv;
 
     void main() {
@@ -609,7 +606,7 @@ height: 645px;
       gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
     }
   `,
-			fragmentShader: `
+				fragmentShader: `
     uniform vec3 color1;
     uniform vec3 color2;
 
@@ -620,92 +617,94 @@ height: 645px;
       gl_FragColor = vec4(mix(color1, color2, vUv.y), 1.0);
     }
   `
-		});
-		var sphere = new THREE.Mesh( geometry, material );
-		scene.add( sphere );
+			});
+			var sphere = new THREE.Mesh( geometry, material );
+			scene.add( sphere );
 
-	}
+		}
 
-	function transform( targets, duration ) {
+		function transform( targets, duration ) {
 
-		TWEEN.removeAll();
+			TWEEN.removeAll();
 
-		for ( let i = 0; i < objects.length; i ++ ) {
+			for ( let i = 0; i < objects.length; i ++ ) {
 
-			const object = objects[ i ];
-			const target = targets[ i ];
+				const object = objects[ i ];
+				const target = targets[ i ];
 
-			new TWEEN.Tween( object.position )
-					.to( { x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration )
-					.easing( TWEEN.Easing.Exponential.InOut )
-					.start();
+				new TWEEN.Tween( object.position )
+						.to( { x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration )
+						.easing( TWEEN.Easing.Exponential.InOut )
+						.start();
 
-			new TWEEN.Tween( object.rotation )
-					.to( { x: target.rotation.x, y: target.rotation.y, z: target.rotation.z }, Math.random() * duration + duration )
-					.easing( TWEEN.Easing.Exponential.InOut )
+				new TWEEN.Tween( object.rotation )
+						.to( { x: target.rotation.x, y: target.rotation.y, z: target.rotation.z }, Math.random() * duration + duration )
+						.easing( TWEEN.Easing.Exponential.InOut )
+						.start();
+
+			}
+
+			new TWEEN.Tween( this )
+					.to( {}, duration * 2 )
+					.onUpdate( render )
 					.start();
 
 		}
 
-		new TWEEN.Tween( this )
-				.to( {}, duration * 2 )
-				.onUpdate( render )
-				.start();
+		function onWindowResize() {
 
-	}
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			renderer.render(scene, camera);
 
-	function onWindowResize() {
+			render();
 
-		camera.aspect = window.innerWidth / window.innerHeight;
-		camera.updateProjectionMatrix();
-		renderer.setSize(window.innerWidth, window.innerHeight);
-		renderer.render(scene, camera);
-
-		render();
-
-	}
-
-	function animate() {
-
-		requestAnimationFrame( animate );
-
-		TWEEN.update();
-
-		controls.update();
-
-		// var time = Date.now() * 0.0004;
-		//
-		// scene.rotation.x = time;
-		// scene.rotation.y = time * 0.7;
-
-	}
-
-	function keyPressed(e){
-		switch(e.key) {
-			case 'ArrowUp':
-				scene.rotateX(-0.1);
-				break;
-			case 'ArrowDown':
-				scene.rotateX(0.1);
-				break;
-			case 'ArrowLeft':
-				scene.rotateY(-0.1);
-				break;
-			case 'ArrowRight':
-				scene.rotateY(0.1);
-				break;
 		}
-		e.preventDefault();
-		render();
-	}
 
-	function render() {
+		function animate() {
 
-		rendererWebGL.render( scene, camera );
-		renderer.render( scene, camera );
+			requestAnimationFrame( animate );
 
-	}
+			TWEEN.update();
 
-</script>
+			controls.update();
+
+			// var time = Date.now() * 0.0004;
+			//
+			// scene.rotation.x = time;
+			// scene.rotation.y = time * 0.7;
+
+		}
+
+		function keyPressed(e){
+			switch(e.key) {
+				case 'ArrowUp':
+					scene.rotateX(-0.1);
+					break;
+				case 'ArrowDown':
+					scene.rotateX(0.1);
+					break;
+				case 'ArrowLeft':
+					scene.rotateY(-0.1);
+					break;
+				case 'ArrowRight':
+					scene.rotateY(0.1);
+					break;
+			}
+			e.preventDefault();
+			render();
+		}
+
+		function render() {
+
+			rendererWebGL.render( scene, camera );
+			renderer.render( scene, camera );
+
+		}
+
+	</script>
+	</div>
+
 </body>
 </html>
